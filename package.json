@@ -1,0 +1,29 @@
+{
+	"name": "euler",
+	"version": "0.1.0",
+	"description": "solutions to project euler",
+	"main": "index.js",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"scripts": {
+		"lint": "yarn tslint src/**/*.ts",
+		"test": "yarn lint; yarn jest src/**/*.test.ts",
+		"build": "yarn tsc",
+		"build:main": "tsc _f.ts",
+		"watch": "tsc -w src"
+	},
+	"repository": "git@github.com:yconway/project-euler-solutions.git",
+	"author": "yo <yoconway@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/jest": "^25.1.1",
+		"chai": "^4.2.0",
+		"jest": "^25.1.0",
+		"prettier": "^1.19.1",
+		"tslint": "^6.0.0",
+		"tslint-config-prettier": "^1.18.0",
+		"tslint-plugin-prettier": "^2.1.0",
+		"typescript": "^3.7.5"
+	}
+}
