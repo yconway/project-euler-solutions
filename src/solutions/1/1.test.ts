@@ -1,4 +1,4 @@
-import { e1 } from './1.solution'
+import { e1 } from 'solutions/1/1.solution'
 
 describe('e1', () => {
 	it('returns the correct answer', () => {

@@ -1,7 +1,8 @@
 import glob from 'glob'
 import path from 'path'
 
-import 'solutions/1/1.solution'
 import { solutions } from './solutions/Solutions'
+import 'solutions/1/1.solution'
+import 'solutions/2/2.solution'
 
-solutions.solve(1)
+solutions.solve()
