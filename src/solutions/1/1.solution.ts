@@ -1,7 +1,7 @@
 import { Mathy } from '../../lib/Mathy'
 import { unique, sum } from '../../lib/array'
 import { log } from '../../lib/log'
-// import { solutions } from '../Solutions'
+import { solutions } from '../Solutions'
 
 export function e1(): number {
 	let max = 999
@@ -13,4 +13,4 @@ export function e1(): number {
 	return sum(uniques)
 }
 
-// solutions.register(1, e1)
+solutions.register(1, e1)

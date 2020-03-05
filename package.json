@@ -2,12 +2,13 @@
 	"name": "euler",
 	"version": "0.1.0",
 	"description": "solutions to project euler",
-	"main": "src/index.js",
+	"main": "dist/index.js",
 	"engines": {
 		"node": ">=4.0.0"
 	},
 	"scripts": {
-		"start": "yarn ts-node src/index.ts",
+		"tsStart": "NODE_PATH=`pwd`/src yarn ts-node src/index.ts",
+		"start": "NODE_PATH=`pwd`/dist node dist/index.js",
 		"lint": "yarn tslint src/**/*.ts",
 		"test": "yarn lint; yarn jest src/**/*.test.ts",
 		"build": "yarn tsc",
@@ -29,6 +30,7 @@
 		"typescript": "^3.7.5"
 	},
 	"dependencies": {
+		"@types/glob": "^7.1.1",
 		"@types/node": "^13.7.0",
 		"glob": "^7.1.6"
 	}

@@ -1,3 +1,5 @@
+import { log } from 'lib/log'
+
 class Solutions {
 	private solvers: { [key: number]: () => any }
 	private largestSolution: number
@@ -15,10 +17,12 @@ class Solutions {
 
 	solve(index?: number): any {
 		let solutionIndex = index || this.largestSolution
+		let result
 		if (solutionIndex && this.solvers[solutionIndex]) {
-			return this.solvers[solutionIndex]()
+			result = this.solvers[solutionIndex]()
 		}
-		return
+		log('result', result)
+		return result
 	}
 }
 
