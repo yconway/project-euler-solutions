@@ -39,4 +39,34 @@ export class Mathy {
 			;[current, next] = [next, 4 * next + current]
 		}
 	}
+
+	static *yieldPrimesViaSieve(maxValue: number = Number.POSITIVE_INFINITY):IterableIterator<number>{
+		let sieve: Array<{prime: number, currentSieveValue: number}> = []
+		let currentValue = 2
+
+		let generateNextCurrentValue = () => {
+			sieve.push({prime: currentValue, currentSieveValue: currentValue + currentValue})
+
+			let nextPrimeFound = false
+			while(!nextPrimeFound){
+				currentValue++
+				updateSieveValues()
+				if(sieve.every((potentialPrimeMultiple) => potentialPrimeMultiple.currentSieveValue > currentValue)){
+					nextPrimeFound = true
+				}
+			}
+		}
+
+		let updateSieveValues = () => {
+			sieve.forEach((primeSuspect) => {
+				while(primeSuspect.currentSieveValue < currentValue){
+					primeSuspect.currentSieveValue += primeSuspect.prime
+				}
+			})
+		}
+		while(currentValue < maxValue){
+			yield currentValue
+			generateNextCurrentValue()
+		}
+	}
 }

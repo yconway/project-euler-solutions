@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"tsStart": "NODE_PATH=`pwd`/src yarn ts-node src/index.ts",
-		"start": "NODE_PATH=`pwd`/dist node dist/index.js",
+		"start": "yarn tsc && NODE_PATH=`pwd`/dist node dist/index.js",
 		"lint": "yarn tslint src/**/**/*.ts",
 		"test": "yarn lint; NODE_PATH=`pwd`/src yarn jest src/**",
 		"build": "yarn tsc",

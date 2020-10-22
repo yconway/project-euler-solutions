@@ -21,7 +21,7 @@ class Solutions {
 		if (solutionIndex && this.solvers[solutionIndex]) {
 			result = this.solvers[solutionIndex]()
 		}
-		log('result', result)
+		log('result for problem', solutionIndex, ': ', result)
 		return result
 	}
 }
